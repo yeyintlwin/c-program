@@ -1,19 +1,10 @@
-#include <stdio.h>
+#include <gtk/gtk.h>
 
-void main(void)
+int main(int argc, char *atgv[])
 {
-    int a;
-    int *ptr_to_a;
-
-    ptr_to_a = &a;
-
-    a = 5;
-    printf("The value of a is %d\n", a);
-
-    *ptr_to_a = 6;
-    printf("The value of a is %d\n", a);
-
-    printf("The value of ptr_to_a is %d\n", ptr_to_a);
-    printf("It stores the value %d\n", *ptr_to_a);
-    printf("The address of a is %d\n", &a);
+    gtk_init(&argc, &argv);
+    GtkWidget *win = gtk_window_new(GTK_WINDOW_TOP_LEVEL);
+    gtk_widget_show(win);
+    gtk_main();
+    return 0;
 }
